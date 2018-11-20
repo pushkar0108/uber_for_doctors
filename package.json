@@ -1,0 +1,32 @@
+{
+  "name": "AwesomeProject123",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-actionsheet": "^2.4.2",
+    "react-native-camera": "^1.2.0",
+    "react-native-elements": "^0.19.1",
+    "react-native-image-picker": "^0.27.1",
+    "react-native-linear-gradient": "^2.4.2",
+    "react-native-qrcode-scanner": "^1.0.1",
+    "react-native-sound": "^0.10.9",
+    "react-native-splash-screen": "^3.1.1",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.12.1"
+  },
+  "devDependencies": {
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^5",
+    "jest": "23.5.0",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
