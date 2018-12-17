@@ -110,6 +110,7 @@ class Orders {
                     });
                 }
 
+                response.data.reverse();
                 return resolve(response);
             });
         });

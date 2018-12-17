@@ -168,7 +168,12 @@ export default class App extends Component {
                                                     </View>
                                                     <View>
                                                         <Text style={styles.textMsg}>{componentMap[row.component_id].name}</Text>
-                                                        <Text>Qty {Number(row.qty).toLocaleString('en-IN')} {row.type ? "IN" : "OUT"}</Text>
+                                                        <View style={{flexDirection: "row"}}>
+                                                            <Text>Qty </Text>
+                                                            <Text style={{color: row.type ? "green" : "red"}}>
+                                                                {row.type ? "+" : "-"}{Number(row.qty).toLocaleString('en-IN')}
+                                                            </Text>
+                                                        </View>
                                                         <Text style={styles.textMsgInfo}>{row.remark}</Text>
                                                     </View>
                                                     <View style={{marginLeft: "auto"}}>
@@ -194,7 +199,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#F5FCFF',
+		backgroundColor: '#ffffff'
 	},
 
     content: { 

@@ -68,6 +68,8 @@ class Party {
 
                 response = response ? JSON.parse(response) : defaultStructure;
                 console.log("######## [party] [list] [response] ", response);
+                
+                response.data.reverse();
                 return resolve(response);
             });
         });

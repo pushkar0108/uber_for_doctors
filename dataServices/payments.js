@@ -79,6 +79,7 @@ class Payments {
                     });
                 }
 
+                response.data.reverse();
                 return resolve(response);
             });
         });

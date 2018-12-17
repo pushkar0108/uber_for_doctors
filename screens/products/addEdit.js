@@ -51,15 +51,11 @@ export default class App extends Component {
                 }
             })
             .then(response => {
-                console.log("calling secont last setState: ", this.state);
                 this.setState({
                     componentList: response.data
                 }, () => {
-                    console.log("calling last setState: ", this.state);
                     this.setState({
                         config: this.getFormConfig(selectedProduct)
-                    }, () => {
-                        console.log("calling last setState, currentState: ", this.state);
                     });
                 });
             })
@@ -79,6 +75,7 @@ export default class App extends Component {
 
         let { componentList } = this.state;
         let selectedComponent = componentList[index-1];
+
         this.addComponentConfig(selectedComponent);
     }
 
@@ -88,8 +85,6 @@ export default class App extends Component {
         if(buttonOption.name == "cancel"){
             return navigation.goBack();
         }
-
-        console.log("------------ [handleFormSubmit] formState: ", formState);
 
         let { config } = this.state;
         let { selectedProduct , selectedParty = {} } = this.params;
@@ -107,9 +102,6 @@ export default class App extends Component {
                                 };
                             })
         };
-
-        console.log("Form submit params: ", params);
-        console.log("Form submit this.state: ", this.state);
 
         if(buttonOption.name == "add") {
             return Alert.alert(
@@ -169,9 +161,7 @@ export default class App extends Component {
             }
         });
 
-        this.setState({ config: config }, () => {
-            console.log("updated state after handleCustomComponentStateChange ", this.state);
-        });
+        this.setState({ config: config });
     }
 
     getCustomComponent(componentConfig) {
@@ -222,8 +212,6 @@ export default class App extends Component {
             }
         };
 
-        // componentConfig.field = this.getCustomComponent(componentConfig);
-
         return componentConfig;
     }
 
@@ -232,6 +220,34 @@ export default class App extends Component {
         let componentConfig = this.getComponentConfig(selectedComponent);
         
         config.formFields.options.push(componentConfig);
+
+        // { name: 'component_LED .5 W',
+        //     type: 'Custom',
+        //     data: 
+        //     { qty: '',
+        //         customRate: '',
+        //         selectedComponent: 
+        //         { name: 'LED .5 W',
+        //             party_id: 1,
+        //             description: 'This is my description',
+        //             mountRate: 0.15,
+        //             id: 1 } } 
+        // },
+
+        // { name: 'component_PCB 100*4',
+        //     type: 'Custom',
+        //     data: 
+        //     { qty: '',
+        //         customRate: '',
+        //         selectedComponent: 
+        //         { name: 'PCB 100*4',
+        //             party_id: 1,
+        //             description: 'This is blank',
+        //             mountRate: 0,
+        //             id: 3 } } 
+        // }
+
+        console.log("componentConfig: ", componentConfig);
         this.setState({ config: config });
     }
 
@@ -325,7 +341,6 @@ export default class App extends Component {
 
         config.formFields.options.forEach(option => {
             if(option.type === "Custom" && option.name !== "addComponents"){
-                console.log("Calling getCustomComponent with options: ", option);
                 option.field = this.getCustomComponent(option);
             }
         });
@@ -362,7 +377,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#F5FCFF',
+		backgroundColor: '#ffffff'
 	},
 
     content: { 

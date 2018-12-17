@@ -94,7 +94,7 @@ export default class App extends Component {
 
                                 <View style={styles.entryContainer}>
                                     <Text style={styles.textMsgDataPoint}>Remark</Text>
-                                    <Text style={styles.textMsg}>{selectedOrder.remark}</Text>
+                                    <Text style={styles.textMsgDataPoint}>{selectedOrder.remark}</Text>
                                 </View>
 
                             </View>
@@ -149,7 +149,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#F5FCFF',
+		backgroundColor: '#ffffff'
 	},
 
     content: { 

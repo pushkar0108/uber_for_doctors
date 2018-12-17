@@ -77,6 +77,7 @@ class Inventory {
                     });
                 }
 
+                response.data.reverse();
                 return resolve(response);
             });
         });

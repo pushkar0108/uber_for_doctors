@@ -82,6 +82,7 @@ class Components {
                     });
                 }
 
+                response.data.reverse();
                 return resolve(response);
             });
         });

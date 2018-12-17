@@ -77,6 +77,7 @@ class Products {
                     });
                 }
 
+                response.data.reverse();
                 return resolve(response);
             });
         });

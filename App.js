@@ -3,66 +3,60 @@
 import React, {Component} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
-import AppContainer from './screens/appContainer';
-import Login from './screens/login/main';
-import FeelingSick from './screens/feelingSick/main';
-import RequestDoc from './screens/feelingSick/requestDoc';
 
+import Party from './screens/party/main';
+import PartyAddEdit from './screens/party/addEdit';
 
-import Signup from './screens/signup/main';
-import OTPVerify from './screens/signup/otpVerify';
-import BasicDetails from './screens/signup/basicDetails';
+import Components from './screens/components/main';
+import ComponentAddEdit from './screens/components/addEdit';
 
-import ChatRoom from './screens/chat/room';
+import Payments from './screens/payments/main';
+import PaymentAddEdit from './screens/payments/addEdit';
 
-import WebView from './screens/common/webView';
-import FormView from './screens/common/formView';
-import Inbox from './screens/inbox/main';
-import Home from './screens/home/main';
+import Orders from './screens/orders/main';
+import OrderAddEdit from './screens/orders/addEdit';
+import OrderDetails from './screens/orders/details';
 
+import Inventory from './screens/inventory/main';
+import InventoryAddEdit from './screens/inventory/addEdit';
+
+import Products from './screens/products/main';
+import ProductAddEdit from './screens/products/addEdit';
 
 import {
   createStackNavigator
 } from 'react-navigation';
 
+
 const AppStack = createStackNavigator({
 
-  AppContainer: {
+  Party: {
     screen: createStackNavigator({
-      AppContainer: { 
-        screen: AppContainer,
+      Party: {
+        screen: Party,
         navigationOptions: {
           header: null
         }
       },
 
-      Login: { 
-        screen: Login,
+      PartyAddEdit: { 
+        screen: PartyAddEdit,
         navigationOptions: {
           header: null
         }
       },
 
-      Signup: {
+      Components: {
         screen: createStackNavigator({
-
-          Signup: { 
-            screen: Signup,
+          Components: { 
+            screen: Components,
             navigationOptions: {
               header: null
             }
           },
-
-          OTPVerify: { 
-            screen: OTPVerify,
-            navigationOptions: {
-              header: null
-            }
-          },
-
-
-          BasicDetails: { 
-            screen: BasicDetails,
+    
+          ComponentAddEdit: { 
+            screen: ComponentAddEdit,
             navigationOptions: {
               header: null
             }
@@ -74,18 +68,17 @@ const AppStack = createStackNavigator({
         }
       },
 
-      FeelingSick: {
+      Payments: {
         screen: createStackNavigator({
-
-          FeelingSick: { 
-            screen: FeelingSick,
+          Payments: { 
+            screen: Payments,
             navigationOptions: {
               header: null
             }
           },
-
-          RequestDoc: { 
-            screen: RequestDoc,
+    
+          PaymentAddEdit: { 
+            screen: PaymentAddEdit,
             navigationOptions: {
               header: null
             }
@@ -97,36 +90,74 @@ const AppStack = createStackNavigator({
         }
       },
 
-      Home: { 
-        screen: Home,
+      Orders: {
+        screen: createStackNavigator({
+          Orders: { 
+            screen: Orders,
+            navigationOptions: {
+              header: null
+            }
+          },
+    
+          OrderAddEdit: { 
+            screen: OrderAddEdit,
+            navigationOptions: {
+              header: null
+            }
+          },
+
+          OrderDetails: { 
+            screen: OrderDetails,
+            navigationOptions: {
+              header: null
+            }
+          }
+    
+        }),
         navigationOptions: {
           header: null
         }
       },
 
-      WebView: { 
-        screen: WebView,
+      Inventory: {
+        screen: createStackNavigator({
+          Inventory: { 
+            screen: Inventory,
+            navigationOptions: {
+              header: null
+            }
+          },
+    
+          InventoryAddEdit: { 
+            screen: InventoryAddEdit,
+            navigationOptions: {
+              header: null
+            }
+          }
+    
+        }),
         navigationOptions: {
           header: null
         }
       },
 
-      FormView: { 
-        screen: FormView,
-        navigationOptions: {
-          header: null
-        }
-      },
-
-      ChatRoom: { 
-        screen: ChatRoom,
-        navigationOptions: {
-          header: null
-        }
-      },
-
-      Inbox: { 
-        screen: Inbox,
+      Products: {
+        screen: createStackNavigator({
+          Products: { 
+            screen: Products,
+            navigationOptions: {
+              header: null
+            }
+          },
+    
+          ProductAddEdit: { 
+            screen: ProductAddEdit,
+            navigationOptions: {
+              header: null
+            }
+          }
+    
+        }),
         navigationOptions: {
           header: null
         }
@@ -139,238 +170,6 @@ const AppStack = createStackNavigator({
   }
 
 });
-
-  // Party: {
-  //   screen: createStackNavigator({
-  //     Party: {
-  //       screen: Party,
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     },
-
-  //     PartyAddEdit: { 
-  //       screen: PartyAddEdit,
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     },
-
-  //     Components: {
-  //       screen: createStackNavigator({
-  //         Components: { 
-  //           screen: Components,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         },
-    
-  //         ComponentAddEdit: { 
-  //           screen: ComponentAddEdit,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         }
-    
-  //       }),
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     },
-
-  //     Payments: {
-  //       screen: createStackNavigator({
-  //         Payments: { 
-  //           screen: Payments,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         },
-    
-  //         PaymentAddEdit: { 
-  //           screen: PaymentAddEdit,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         }
-    
-  //       }),
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     },
-
-  //     Orders: {
-  //       screen: createStackNavigator({
-  //         Orders: { 
-  //           screen: Orders,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         },
-    
-  //         OrderAddEdit: { 
-  //           screen: OrderAddEdit,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         },
-
-  //         OrderDetails: { 
-  //           screen: OrderDetails,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         }
-    
-  //       }),
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     },
-
-  //     Inventory: {
-  //       screen: createStackNavigator({
-  //         Inventory: { 
-  //           screen: Inventory,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         },
-    
-  //         InventoryAddEdit: { 
-  //           screen: InventoryAddEdit,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         }
-    
-  //       }),
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     },
-
-  //     Products: {
-  //       screen: createStackNavigator({
-  //         Products: { 
-  //           screen: Products,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         },
-    
-  //         ProductAddEdit: { 
-  //           screen: ProductAddEdit,
-  //           navigationOptions: {
-  //             header: null
-  //           }
-  //         }
-    
-  //       }),
-  //       navigationOptions: {
-  //         header: null
-  //       }
-  //     }
-
-  //   }),
-  //   navigationOptions: {
-  //     header: null
-  //   }
-  // },
-
-
-//   TemplesDetails: {
-//     screen: createStackNavigator({
-//       TemplesDetails: { 
-//         screen: TemplesDetails,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//       Temples: { 
-//         screen: Temples,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//       TemplesList: { 
-//         screen: TemplesList,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-      
-//     }),
-//     navigationOptions: {
-//       header: null
-//     }
-//   },
-//   Jain: { 
-//     screen: Jain,
-//     navigationOptions: {
-//       header: null
-//     }
-//   },
-  
-//   Prayers: {
-//     screen: createStackNavigator({
-//       Prayers: { 
-//         screen: Prayers,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//       PrayersList: {
-//         screen: PrayersList,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//       PrayerDetails: {
-//         screen: PrayerDetails,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//     }),
-//     navigationOptions: {
-//       header: null
-//     }
-//   },
-  
-//   Tirthankar: {
-//     screen: createStackNavigator({
-//       Tirthankar: { 
-//         screen: Tirthankar,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//       TirthankarDetails: {
-//         screen: TirthankarDetails,
-//         navigationOptions: {
-//           header: null
-//         }
-//       },
-//       TirthankarInfo: {
-//         screen: TirthankarInfo,
-//         navigationOptions: {
-//           header: null
-//         }
-//       }
-//     }),
-//     navigationOptions: {
-//       header: null
-//     }
-//   },
-//   Navkar: { 
-//     screen: Navkar,
-//     navigationOptions: {
-//       header: null
-//     }
-//   },
-  
 
 export default class App extends Component {
   componentDidMount() {
